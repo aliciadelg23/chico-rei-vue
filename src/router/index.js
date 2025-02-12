@@ -7,9 +7,10 @@ import Checkout from "../views/ProductCheckout.vue";
 Vue.use(VueRouter);
 
 const routes = [
-    { path: "/", component: HomePage },
+  { path: "/", component: HomePage },
   { path: "/products", component: ProductList },
   { path: "/checkout", component: Checkout },
+  { path: "/category/:type", component: ProductList, props: true }, 
 ];
 
 export default new VueRouter({
