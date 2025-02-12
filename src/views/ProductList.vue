@@ -16,7 +16,7 @@
   
   <style lang="less" scoped>
   .product-list {
-    padding: 1rem;
+    padding-top: 1.5rem;
   }
   </style>
   

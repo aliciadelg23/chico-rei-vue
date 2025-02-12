@@ -34,19 +34,19 @@ export default {
         Camisetas: Array.from({ length: 18 }).map((_, index) => ({
           image: "https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top",
           title: `Camiseta Modelo ${index + 1}`,
-          description: "Camiseta confortável de algodão.Camiseta confortável de algodão.Camiseta confortável de algodão.Camiseta confortável de algodão.",
+          description: "Camiseta confortável",
           price: `R$ ${(49.90 + index).toFixed(2)}`,
         })),
         Calçados: Array.from({ length: 18 }).map((_, index) => ({
           image: "https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top",
           title: `Calçado Modelo ${index + 1}`,
-          description: "Calçado confortável e estiloso.",
+          description: "Calçado confortável.",
           price: `R$ ${(99.90 + index * 10).toFixed(2)}`,
         })),
         Acessórios: Array.from({ length: 18 }).map((_, index) => ({
           image: "https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top",
-          title: `Acessório ${index + 1}`,
-          description: "Acessório de alta qualidade.",
+          title: `Acessório Modelo ${index + 1}`,
+          description: "Acessório Estiloso.",
           price: `R$ ${(29.90 + index * 5).toFixed(2)}`,
         })),
       },
