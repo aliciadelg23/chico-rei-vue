@@ -1,26 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    
+    <SidebarMenu />
+    <router-view />
   </div>
 </template>
 
 <script>
-
+import SidebarMenu from "./components/SidebarMenu.vue";
 
 export default {
-  name: 'App',
- 
-}
+  name: "AppLayout",
+  components: {
+    SidebarMenu,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
