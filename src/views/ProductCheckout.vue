@@ -1,18 +1,17 @@
 <template>
   <div class="product-checkout">
-   
     <CheckoutForm />
   </div>
 </template>
 
 <script>
-import CheckoutForm from '../components/CheckoutForm.vue';
+import CheckoutForm from "../components/CheckoutForm.vue";
 
 export default {
   components: {
-    CheckoutForm
-  }
-}
+    CheckoutForm,
+  },
+};
 </script>
 
 <style lang="less" scoped>

@@ -37,14 +37,14 @@ export default {
 .main-content {
   transition: margin-left 0.3s ease-in-out;
   padding: 2rem;
- 
+
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .main-content {
-   padding-left: 0%;
-   padding-right: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 }
 </style>

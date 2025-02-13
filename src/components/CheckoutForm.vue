@@ -1,8 +1,3 @@
-
-
-
-
-
 <template>
   <div class="checkout-form">
     <h2>Finalização do Pedido</h2>
@@ -13,11 +8,21 @@
           <h3>Informações de Contato</h3>
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" v-model="form.email" placeholder="E-mail" />
+            <input
+              type="email"
+              id="email"
+              v-model="form.email"
+              placeholder="E-mail"
+            />
           </div>
           <div class="form-group">
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" v-model="form.telefone" placeholder="Telefone" />
+            <input
+              type="tel"
+              id="telefone"
+              v-model="form.telefone"
+              placeholder="Telefone"
+            />
           </div>
         </div>
 
@@ -26,7 +31,13 @@
           <div class="form-group">
             <label for="cep">CEP</label>
             <div class="cep-container">
-              <input type="text" id="cep" v-model="form.cep" placeholder="CEP" @blur="buscarEndereco" />
+              <input
+                type="text"
+                id="cep"
+                v-model="form.cep"
+                placeholder="CEP"
+                @blur="buscarEndereco"
+              />
               <button @click="buscarEndereco">
                 <span role="img" aria-label="Buscar">🔍</span>
               </button>
@@ -38,23 +49,48 @@
           </div>
           <div class="form-group">
             <label for="numero">Número</label>
-            <input type="text" id="numero" v-model="form.numero" placeholder="Número" />
+            <input
+              type="text"
+              id="numero"
+              v-model="form.numero"
+              placeholder="Número"
+            />
           </div>
           <div class="form-group">
             <label for="complemento">Complemento</label>
-            <input type="text" id="complemento" v-model="form.complemento" placeholder="Complemento" />
+            <input
+              type="text"
+              id="complemento"
+              v-model="form.complemento"
+              placeholder="Complemento"
+            />
           </div>
           <div class="form-group">
             <label for="bairro">Bairro</label>
-            <input type="text" id="bairro" v-model="form.bairro" placeholder="Bairro" />
+            <input
+              type="text"
+              id="bairro"
+              v-model="form.bairro"
+              placeholder="Bairro"
+            />
           </div>
           <div class="form-group">
             <label for="cidade">Cidade</label>
-            <input type="text" id="cidade" v-model="form.cidade" placeholder="Cidade" />
+            <input
+              type="text"
+              id="cidade"
+              v-model="form.cidade"
+              placeholder="Cidade"
+            />
           </div>
           <div class="form-group">
             <label for="estado">Estado</label>
-            <input type="text" id="estado" v-model="form.estado" placeholder="Estado" />
+            <input
+              type="text"
+              id="estado"
+              v-model="form.estado"
+              placeholder="Estado"
+            />
           </div>
         </div>
 
@@ -62,15 +98,30 @@
           <h3>Informações de Pagamento</h3>
           <div class="form-group">
             <label for="numeroCartao">Número do Cartão</label>
-            <input type="text" id="numeroCartao" v-model="form.numeroCartao" placeholder="Número do Cartão" />
+            <input
+              type="text"
+              id="numeroCartao"
+              v-model="form.numeroCartao"
+              placeholder="Número do Cartão"
+            />
           </div>
           <div class="form-group">
             <label for="titularCartao">Titular do Cartão</label>
-            <input type="text" id="titularCartao" v-model="form.titularCartao" placeholder="Titular do Cartão" />
+            <input
+              type="text"
+              id="titularCartao"
+              v-model="form.titularCartao"
+              placeholder="Titular do Cartão"
+            />
           </div>
           <div class="form-group">
             <label for="dataVencimento">Data de Vencimento</label>
-            <input type="text" id="dataVencimento" v-model="form.dataVencimento" placeholder="Data de Vencimento" />
+            <input
+              type="text"
+              id="dataVencimento"
+              v-model="form.dataVencimento"
+              placeholder="Data de Vencimento"
+            />
           </div>
           <div class="form-group">
             <label for="cvc">CVC</label>
@@ -82,7 +133,10 @@
       <div class="cart-section">
         <h3>Sua Sacola</h3>
         <div class="cart-item">
-          <img src="https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top" alt="Produto Lorem" />
+          <img
+            src="https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top"
+            alt="Produto Lorem"
+          />
           <div class="item-details">
             <p>Produto Lorem</p>
             <p>R$ 19,90</p>
@@ -98,14 +152,16 @@
     </div>
 
     <button @click="fecharPedido" :disabled="loading">
-      {{ loading ? 'Processando...' : 'Finalizar Pedido' }}
+      {{ loading ? "Processando..." : "Finalizar Pedido" }}
     </button>
-    <div v-if="mensagemSucesso" class="success-message">{{ mensagemSucesso }}</div>
+    <div v-if="mensagemSucesso" class="success-message">
+      {{ mensagemSucesso }}
+    </div>
   </div>
 </template>
 
 <script>
-import cep from 'cep-promise';
+import cep from "cep-promise";
 
 export default {
   data() {
@@ -126,7 +182,7 @@ export default {
         cvc: "",
       },
       quantity: 1,
-      itemPrice: 19.90,
+      itemPrice: 19.9,
       loading: false,
       mensagemSucesso: "",
     };
@@ -161,8 +217,34 @@ export default {
       }
     },
     validarCampos() {
-      const { email, telefone, cep, rua, numero, bairro, cidade, estado, numeroCartao, titularCartao, dataVencimento, cvc } = this.form;
-      if (!email || !telefone || !cep || !rua || !numero || !bairro || !cidade || !estado || !numeroCartao || !titularCartao || !dataVencimento || !cvc) {
+      const {
+        email,
+        telefone,
+        cep,
+        rua,
+        numero,
+        bairro,
+        cidade,
+        estado,
+        numeroCartao,
+        titularCartao,
+        dataVencimento,
+        cvc,
+      } = this.form;
+      if (
+        !email ||
+        !telefone ||
+        !cep ||
+        !rua ||
+        !numero ||
+        !bairro ||
+        !cidade ||
+        !estado ||
+        !numeroCartao ||
+        !titularCartao ||
+        !dataVencimento ||
+        !cvc
+      ) {
         alert("Todos os campos são obrigatórios!");
         return false;
       }
@@ -253,7 +335,7 @@ export default {
     color: #333;
   }
 
-.checkout-container {
+  .checkout-container {
     display: flex;
     flex-direction: column;
     @media (min-width: 768px) {
@@ -262,11 +344,10 @@ export default {
     }
   }
 
- .form-sections {
+  .form-sections {
     flex: 2;
     margin-right: 20px;
   }
-  
 
   .cart-section {
     flex: 1;
