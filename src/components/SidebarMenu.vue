@@ -1,24 +1,35 @@
 <template>
   <div class="menu-container" :class="{ desktop: !isMobile }">
-    <button @click="toggleMenu" class="menu-button" v-if="isMobile && !isOpen">☰</button>
+    <button @click="toggleMenu" class="menu-button" v-if="isMobile && !isOpen">
+      ☰
+    </button>
     <nav class="sidebar" :class="{ open: isOpen, desktop: !isMobile }">
-
       <img
         class="logo"
-         v-if="!isMobile || !isOpen"
+        v-if="!isMobile || !isOpen"
         src="https://chico-rei.imgix.net/images/site/2021/brand/chico-rei-text.svg"
         alt="Chico Rei Logo"
       />
-      
+
       <div class="menu-header" v-if="isMobile">
         <span class="menu-title" v-if="isOpen">Menu</span>
         <button @click="toggleMenu" class="close-button">✖</button>
       </div>
 
       <ul>
-        <li><router-link to="/" @click.native="closeMenu">Home</router-link></li>
-        <li><router-link to="/products" @click.native="closeMenu">Produtos</router-link></li>
-        <li><router-link to="/checkout" @click.native="closeMenu">Checkout</router-link></li>
+        <li>
+          <router-link to="/" @click.native="closeMenu">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/products" @click.native="closeMenu"
+            >Produtos</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/checkout" @click.native="closeMenu"
+            >Checkout</router-link
+          >
+        </li>
       </ul>
     </nav>
   </div>
@@ -62,9 +73,13 @@ export default {
 @primary-color: #333;
 
 .menu-container {
-  position: relative;
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 1000;
+  background: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 0;
 
   &.desktop .sidebar {
@@ -75,9 +90,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     height: 70px;
     padding: 0 20px;
+    box-shadow: none;
   }
 
   &.desktop .logo {
