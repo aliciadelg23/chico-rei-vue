@@ -418,7 +418,7 @@ export default {
   .success-message {
     margin-top: 20px;
     padding: 15px;
-    background-color: #388545;
+    background-color: #7af088;
     border: 1px solid #ffffff;
     color: #3c763d;
     border-radius: 4px;
