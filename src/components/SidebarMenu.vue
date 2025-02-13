@@ -2,10 +2,19 @@
   <div class="menu-container" :class="{ desktop: !isMobile }">
     <button @click="toggleMenu" class="menu-button" v-if="isMobile && !isOpen">☰</button>
     <nav class="sidebar" :class="{ open: isOpen, desktop: !isMobile }">
-      <div class="menu-header">
-        <span class="menu-title" v-if="isMobile">Menu</span>
-        <button @click="toggleMenu" class="close-button" v-if="isMobile">✖</button>
+
+      <img
+        class="logo"
+         v-if="!isMobile || !isOpen"
+        src="https://chico-rei.imgix.net/images/site/2021/brand/chico-rei-text.svg"
+        alt="Chico Rei Logo"
+      />
+      
+      <div class="menu-header" v-if="isMobile">
+        <span class="menu-title" v-if="isOpen">Menu</span>
+        <button @click="toggleMenu" class="close-button">✖</button>
       </div>
+
       <ul>
         <li><router-link to="/" @click.native="closeMenu">Home</router-link></li>
         <li><router-link to="/products" @click.native="closeMenu">Produtos</router-link></li>
@@ -53,33 +62,38 @@ export default {
 @primary-color: #333;
 
 .menu-container {
-    position: relative; // Add this line
-    display: flex;
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin: 0;
+
+  &.desktop .sidebar {
+    position: relative;
     width: 100%;
+    left: auto;
+    top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  &.desktop .logo {
+    max-height: 40px;
+  }
+
+  &.desktop ul {
+    padding: 0;
+    display: flex;
     margin: 0;
+  }
 
-    &.desktop .sidebar {
-        position: relative; // Modify this line
-        width: 100%;
-        left: auto;
-        top: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        height: 60px;
-
-        ul {
-          padding: 0;
-          display: flex;
-          margin: 0;
-        }
-  
-        ul li {
-          margin: 0;
-          padding: 0 15px;
-        }
-    }
+  &.desktop ul li {
+    margin: 0;
+    padding: 0 15px;
+  }
 }
 
 @keyframes slideIn {
@@ -120,10 +134,10 @@ export default {
   ul {
     list-style: none;
     padding: 20px;
-  
+
     li {
       margin: 15px 0;
-  
+
       a {
         color: black;
         text-decoration: none;
