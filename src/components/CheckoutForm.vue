@@ -418,8 +418,8 @@ export default {
   .success-message {
     margin-top: 20px;
     padding: 15px;
-    background-color: #dff0d8;
-    border: 1px solid #3c763d;
+    background-color: #388545;
+    border: 1px solid #ffffff;
     color: #3c763d;
     border-radius: 4px;
     text-align: center;
@@ -472,8 +472,8 @@ export default {
   }
 
   button {
-    background-color: #5cb85c;
-    color: white;
+    background-color: #e0e0e0;
+    color: rgb(27, 27, 27);
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -483,7 +483,7 @@ export default {
     margin-left: 10px;
 
     &:hover {
-      background-color: #449d44;
+      background-color: #baf7aa;
     }
 
     &:disabled {
