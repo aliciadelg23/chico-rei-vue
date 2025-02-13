@@ -28,7 +28,7 @@ export default {
   props: ["type"],
   data() {
     return {
-      categories: ["Camisetas", "Calçados", "Acessórios"],
+      categories: ["Camisetas", "Meias", "Acessórios"],
       selectedCategory: this.$route.params.type || "Camisetas",
       productsByCategory: {
         Camisetas: Array.from({ length: 18 }).map((_, index) => ({
@@ -37,14 +37,14 @@ export default {
           description: "Camiseta confortável",
           price: `R$ ${(49.90 + index).toFixed(2)}`,
         })),
-        Calçados: Array.from({ length: 18 }).map((_, index) => ({
-          image: "https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top",
-          title: `Calçado Modelo ${index + 1}`,
-          description: "Calçado confortável.",
-          price: `R$ ${(99.90 + index * 10).toFixed(2)}`,
+        Meias: Array.from({ length: 18 }).map((_, index) => ({
+          image: "https://chicorei.imgix.net/195345/3d60a970-8716-11ef-957c-eb9a9aa98fff.jpg?auto=compress%2Cformat&q=65&fit=crop&w=290&h=435",
+          title: `Meia Modelo ${index + 1}`,
+          description: "Meia confortável.",
+          price: `R$ ${(49.90 + index * 10).toFixed(2)}`,
         })),
         Acessórios: Array.from({ length: 18 }).map((_, index) => ({
-          image: "https://chicorei.imgix.net/623/9521d980-106c-11ee-841d-8f3f4426cbb8.jpg?auto=compress,format&q=65&w=550&h=824&fit=crop&crop=top",
+          image: "https://chicorei.imgix.net/18574/f5dddc30-3664-11ec-b4db-57bec9208f15.jpg?auto=compress%2Cformat&q=65&fit=crop&w=290&h=435",
           title: `Acessório Modelo ${index + 1}`,
           description: "Acessório Estiloso.",
           price: `R$ ${(29.90 + index * 5).toFixed(2)}`,
